@@ -1,0 +1,246 @@
+<html>
+	<head>
+		<script src="libraries\bundle.min.js"></script>
+		<script src="scripts\scramSeq.js"></script>
+		<script src="scripts\drawSkewb.js"></script>
+		<script src="scripts\draw222.js"></script>
+		<script src="scripts\drawPyraminx.js"></script>
+		<script src="scripts\draw333.js"></script>
+	</head>
+	<body onload="init()">
+
+		<label>Cube:</label>
+		<select id="cubes">
+  			<option value="222">2x2x2</option>
+  			<option value="333">3x3x3</option>
+  			<option value="skb">skewb</option>
+  			<option value="pyram">pyraminx</option>
+		</select>
+		<br>
+
+		<label>Input scramble:</label>
+		<input id="scram_here" type="text" placeholder="scramble here">
+		<br>
+
+		<div id="222_div" style="width:200px; height:200px;">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 178 136" style="stroke-linejoin:round;">
+				<g>
+					<rect x="44" y="2" width="20" height="20" stroke="black" id="222_U1"></rect>
+					<rect x="64" y="2" width="20" height="20" stroke="black" id="222_U2"></rect>
+					<rect x="44" y="22" width="20" height="20" stroke="black" id="222_U3"></rect>
+					<rect x="64" y="22" width="20" height="20" stroke="black" id="222_U4"></rect>
+					<rect x="86" y="44" width="20" height="20" stroke="black" id="222_R1"></rect>
+					<rect x="106" y="44" width="20" height="20" stroke="black" id="222_R2"></rect>
+					<rect x="86" y="64" width="20" height="20" stroke="black" id="222_R3"></rect>
+					<rect x="106" y="64" width="20" height="20" stroke="black" id="222_R4"></rect>
+					<rect x="44" y="44" width="20" height="20" stroke="black" id="222_F1"></rect>
+					<rect x="64" y="44" width="20" height="20" stroke="black" id="222_F2"></rect>
+					<rect x="44" y="64" width="20" height="20" stroke="black" id="222_F3"></rect>
+					<rect x="64" y="64" width="20" height="20" stroke="black" id="222_F4"></rect>
+					<rect x="44" y="86" width="20" height="20" stroke="black" id="222_D1"></rect>
+					<rect x="64" y="86" width="20" height="20" stroke="black" id="222_D2"></rect>
+					<rect x="44" y="106" width="20" height="20" stroke="black" id="222_D3"></rect>
+					<rect x="64" y="106" width="20" height="20" stroke="black" id="222_D4"></rect>
+					<rect x="2" y="44" width="20" height="20" stroke="black" id="222_L1"></rect>
+					<rect x="22" y="44" width="20" height="20" stroke="black" id="222_L2"></rect>
+					<rect x="2" y="64" width="20" height="20" stroke="black" id="222_L3"></rect>
+					<rect x="22" y="64" width="20" height="20" stroke="black" id="222_L4"></rect>
+					<rect x="128" y="44" width="20" height="20" stroke="black" id="222_B1"></rect>
+					<rect x="148" y="44" width="20" height="20" stroke="black" id="222_B2"></rect>
+					<rect x="128" y="64" width="20" height="20" stroke="black" id="222_B3"></rect>
+					<rect x="148" y="64" width="20" height="20" stroke="black" id="222_B4"></rect>
+				</g>
+			</svg>
+		</div>
+		<br>
+		<div id="skb_div" style="width:200px; height:200px;">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-7 1 244 220" style="stroke-linejoin:round;">
+				<g>
+					<polygon points="116,2 86,20 146,20" stroke="black" id="skb_U1"/>
+					<polygon points="86,20 56,38 86,56" stroke="black" id="skb_U2"/>
+					<polygon points="86,20 146,20 146,56 86,56" stroke="black" id="skb_U3"/>
+					<polygon points="146,20 176,38 146,56" stroke="black" id="skb_U4"/>
+					<polygon points="86,56 146,56 116,74" stroke="black" id="skb_U5"/>
+					<polygon points="56,38 86,56 56,74" stroke="black" id="skb_F1"/>
+					<polygon points="86,56 116,74 116,110" stroke="black" id="skb_F2"/>
+					<polygon points="86,56 116,110 86,128 56,74" stroke="black" id="skb_F3"/>
+					<polygon points="56,74 86,128 56,110" stroke="black" id="skb_F4"/>
+					<polygon points="116,110 116,146 86,128" stroke="black" id="skb_F5"/>
+					<polygon points="116,74 146,56 116,110" stroke="black" id="skb_R1"/>
+					<polygon points="146,56 176,38 176,74" stroke="black" id="skb_R2"/>
+					<polygon points="146,56 176,74 146,128 116,110" stroke="black" id="skb_R3"/>
+					<polygon points="116,110 146,128 116,146" stroke="black" id="skb_R4"/>
+					<polygon points="176,74 176,110 146,128" stroke="black" id="skb_R5"/>
+					<polygon points="-6,2 26,20 -6,38" stroke="black" id="skb_L1"/>
+					<polygon points="26,20 56,38 56,74" stroke="black" id="skb_L2"/>
+					<polygon points="26,20 56,74 26,92 -6,38" stroke="black" id="skb_L3"/>
+					<polygon points="-6,38 26,92 -6,74" stroke="black" id="skb_L4"/>
+					<polygon points="56,74 56,110 26,92" stroke="black" id="skb_L5"/>
+					<polygon points="176,38 206,20 176,74" stroke="black" id="skb_B1"/>
+					<polygon points="206,20 236,2 236,38" stroke="black" id="skb_B2"/>
+					<polygon points="206,20 236,38 206,92 176,74" stroke="black" id="skb_B3"/>
+					<polygon points="176,74 206,92 176,110" stroke="black" id="skb_B4"/>
+					<polygon points="236,38 236,74 206,92" stroke="black" id="skb_B5"/>
+					<polygon points="56,110 86,128 56,146" stroke="black" id="skb_D2"/>
+					<polygon points="86,128 116,146 116,182" stroke="black" id="skb_D1"/>
+					<polygon points="86,128 116,182 86,200 56,146" stroke="black" id="skb_D3"/>
+					<polygon points="56,146 86,200 56,182" stroke="black" id="skb_D5"/>
+					<polygon points="116,182 116,218 86,200" stroke="black" id="skb_D4"/>
+				</g>
+			</svg>
+		</div>
+		<br>
+		<div id="333_div" style="width:200px; height:200px;">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 258 196" style="stroke-linejoin:round;">
+				<g>
+					<rect x="64" y="2" width="20" height="20" stroke="black" id="333_U1"></rect>
+					<rect x="84" y="2" width="20" height="20" stroke="black" id="333_U2"></rect>
+					<rect x="104" y="2" width="20" height="20" stroke="black" id="333_U3"></rect>
+					<rect x="64" y="22" width="20" height="20" stroke="black" id="333_U4"></rect>
+					<rect x="84" y="22" width="20" height="20" stroke="black" id="333_U5"></rect>
+					<rect x="104" y="22" width="20" height="20" stroke="black" id="333_U6"></rect>
+					<rect x="64" y="42" width="20" height="20" stroke="black" id="333_U7"></rect>
+					<rect x="84" y="42" width="20" height="20" stroke="black" id="333_U8"></rect>
+					<rect x="104" y="42" width="20" height="20" stroke="black" id="333_U9"></rect>
+					<rect x="126" y="64" width="20" height="20" stroke="black" id="333_R1"></rect>
+					<rect x="146" y="64" width="20" height="20" stroke="black" id="333_R2"></rect>
+					<rect x="166" y="64" width="20" height="20" stroke="black" id="333_R3"></rect>
+					<rect x="126" y="84" width="20" height="20" stroke="black" id="333_R4"></rect>
+					<rect x="146" y="84" width="20" height="20" stroke="black" id="333_R5"></rect>
+					<rect x="166" y="84" width="20" height="20" stroke="black" id="333_R6"></rect>
+					<rect x="126" y="104" width="20" height="20" stroke="black" id="333_R7"></rect>
+					<rect x="146" y="104" width="20" height="20" stroke="black" id="333_R8"></rect>
+					<rect x="166" y="104" width="20" height="20" stroke="black" id="333_R9"></rect>
+					<rect x="64" y="64" width="20" height="20" stroke="black" id="333_F1"></rect>
+					<rect x="84" y="64" width="20" height="20" stroke="black" id="333_F2"></rect>
+					<rect x="104" y="64" width="20" height="20" stroke="black" id="333_F3"></rect>
+					<rect x="64" y="84" width="20" height="20" stroke="black" id="333_F4"></rect>
+					<rect x="84" y="84" width="20" height="20" stroke="black" id="333_F5"></rect>
+					<rect x="104" y="84" width="20" height="20" stroke="black" id="333_F6"></rect>
+					<rect x="64" y="104" width="20" height="20" stroke="black" id="333_F7"></rect>
+					<rect x="84" y="104" width="20" height="20" stroke="black" id="333_F8"></rect>
+					<rect x="104" y="104" width="20" height="20" stroke="black" id="333_F9"></rect>
+					<rect x="64" y="126" width="20" height="20" stroke="black" id="333_D1"></rect>
+					<rect x="84" y="126" width="20" height="20" stroke="black" id="333_D2"></rect>
+					<rect x="104" y="126" width="20" height="20" stroke="black" id="333_D3"></rect>
+					<rect x="64" y="146" width="20" height="20" stroke="black" id="333_D4"></rect>
+					<rect x="84" y="146" width="20" height="20" stroke="black" id="333_D5"></rect>
+					<rect x="104" y="146" width="20" height="20" stroke="black" id="333_D6"></rect>
+					<rect x="64" y="166" width="20" height="20" stroke="black" id="333_D7"></rect>
+					<rect x="84" y="166" width="20" height="20" stroke="black" id="333_D8"></rect>
+					<rect x="104" y="166" width="20" height="20" stroke="black" id="333_D9"></rect>
+					<rect x="2" y="64" width="20" height="20" stroke="black" id="333_L1"></rect>
+					<rect x="22" y="64" width="20" height="20" stroke="black" id="333_L2"></rect>
+					<rect x="42" y="64" width="20" height="20" stroke="black" id="333_L3"></rect>
+					<rect x="2" y="84" width="20" height="20" stroke="black" id="333_L4"></rect>
+					<rect x="22" y="84" width="20" height="20" stroke="black" id="333_L5"></rect>
+					<rect x="42" y="84" width="20" height="20" stroke="black" id="333_L6"></rect>
+					<rect x="2" y="104" width="20" height="20" stroke="black" id="333_L7"></rect>
+					<rect x="22" y="104" width="20" height="20" stroke="black" id="333_L8"></rect>
+					<rect x="42" y="104" width="20" height="20" stroke="black" id="333_L9"></rect>
+					<rect x="188" y="64" width="20" height="20" stroke="black" id="333_B1"></rect>
+					<rect x="208" y="64" width="20" height="20" stroke="black" id="333_B2"></rect>
+					<rect x="228" y="64" width="20" height="20" stroke="black" id="333_B3"></rect>
+					<rect x="188" y="84" width="20" height="20" stroke="black" id="333_B4"></rect>
+					<rect x="208" y="84" width="20" height="20" stroke="black" id="333_B5"></rect>
+					<rect x="228" y="84" width="20" height="20" stroke="black" id="333_B6"></rect>
+					<rect x="188" y="104" width="20" height="20" stroke="black" id="333_B7"></rect>
+					<rect x="208" y="104" width="20" height="20" stroke="black" id="333_B8"></rect>
+					<rect x="228" y="104" width="20" height="20" stroke="black" id="333_B9"></rect>
+				</g>
+			</svg>
+		</div>
+		<div id="pyram_div" style="width:200px; height:200px;">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 138 119" style="stroke-linejoin:round;">
+				<g>
+					<polygon points="0 2, 10 19.32050807568877, 20 2" stroke="black" id="pyram_L1"></polygon>
+					<polygon points="10 19.32050807568877, 20 2, 30 19.32050807568877" stroke="black" id="pyram_L2"></polygon>
+					<polygon points="20 2, 30 19.32050807568877, 40 2" stroke="black" id="pyram_L3"></polygon>
+					<polygon points="30 19.32050807568877, 40 2, 50 19.32050807568877" stroke="black" id="pyram_L4"></polygon>
+					<polygon points="40 2, 50 19.32050807568877, 60 2" stroke="black" id="pyram_L5"></polygon>
+					<polygon points="52 19.32050807568877, 62 2, 72 19.32050807568877" stroke="black" id="pyram_F1"></polygon>
+					<polygon points="64 2, 74 19.32050807568877, 84 2" stroke="black" id="pyram_R1"></polygon>
+					<polygon points="74 19.32050807568877, 84 2, 94 19.32050807568877" stroke="black" id="pyram_R2"></polygon>
+					<polygon points="84 2, 94 19.32050807568877, 104 2" stroke="black" id="pyram_R3"></polygon>
+					<polygon points="94 19.32050807568877, 104 2, 114 19.32050807568877" stroke="black" id="pyram_R4"></polygon>
+					<polygon points="104 2, 114 19.32050807568877, 124 2" stroke="black" id="pyram_R5"></polygon>
+					<polygon points="10 19.32050807568877, 20 36.64101615137754, 30 19.32050807568877" stroke="black" id="pyram_L6"></polygon>
+					<polygon points="20 36.64101615137754, 30 19.32050807568877, 40 36.64101615137754" stroke="black" id="pyram_L7"></polygon>
+					<polygon points="30 19.32050807568877, 40 36.64101615137754, 50 19.32050807568877" stroke="black" id="pyram_L8"></polygon>
+					<polygon points="42 36.64101615137754, 52 19.32050807568877, 62 36.64101615137754" stroke="black" id="pyram_F2"></polygon>
+					<polygon points="52 19.32050807568877, 62 36.64101615137754, 72 19.32050807568877" stroke="black" id="pyram_F3"></polygon>
+					<polygon points="62 36.64101615137754, 72 19.32050807568877, 82 36.64101615137754" stroke="black" id="pyram_F4"></polygon>
+					<polygon points="74 19.32050807568877, 84 36.64101615137754, 94 19.32050807568877" stroke="black" id="pyram_R6"></polygon>
+					<polygon points="84 36.64101615137754, 94 19.32050807568877, 104 36.64101615137754" stroke="black" id="pyram_R7"></polygon>
+					<polygon points="94 19.32050807568877, 104 36.64101615137754, 114 19.32050807568877" stroke="black" id="pyram_R8"></polygon>
+					<polygon points="20 36.64101615137754, 30 53.96152422706631, 40 36.64101615137754" stroke="black" id="pyram_L9"></polygon>
+					<polygon points="32 53.96152422706631, 42 36.64101615137754, 52 53.96152422706631" stroke="black" id="pyram_F5"></polygon>
+					<polygon points="42 36.64101615137754, 52 53.96152422706631, 62 36.64101615137754" stroke="black" id="pyram_F6"></polygon>
+					<polygon points="52 53.96152422706631, 62 36.64101615137754, 72 53.96152422706631" stroke="black" id="pyram_F7"></polygon>
+					<polygon points="62 36.64101615137754, 72 53.96152422706631, 82 36.64101615137754" stroke="black" id="pyram_F8"></polygon>
+					<polygon points="72 53.96152422706631, 82 36.64101615137754, 92 53.96152422706631" stroke="black" id="pyram_F9"></polygon>
+					<polygon points="84 36.64101615137754, 94 53.96152422706631, 104 36.64101615137754" stroke="black" id="pyram_R9"></polygon>
+					<polygon points="32 55.96152422706631, 42 73.28203230275508, 52 55.96152422706631" stroke="black" id="pyram_D1"></polygon>
+					<polygon points="42 73.28203230275508, 52 55.96152422706631, 62 73.28203230275508" stroke="black" id="pyram_D2"></polygon>
+					<polygon points="52 55.96152422706631, 62 73.28203230275508, 72 55.96152422706631" stroke="black" id="pyram_D3"></polygon>
+					<polygon points="62 73.28203230275508, 72 55.96152422706631, 82 73.28203230275508" stroke="black" id="pyram_D4"></polygon>
+					<polygon points="72 55.96152422706631, 82 73.28203230275508, 92 55.96152422706631" stroke="black" id="pyram_D5"></polygon>
+					<polygon points="42 73.28203230275508, 52 90.60254037844385, 62 73.28203230275508" stroke="black" id="pyram_D6"></polygon>
+					<polygon points="52 90.60254037844385, 62 73.28203230275508, 72 90.60254037844385" stroke="black" id="pyram_D7"></polygon>
+					<polygon points="62 73.28203230275508, 72 90.60254037844385, 82 73.28203230275508" stroke="black" id="pyram_D8"></polygon>
+					<polygon points="52 90.60254037844385, 62 107.92304845413263, 72 90.60254037844385" stroke="black" id="pyram_D9"></polygon>
+				</g>
+			</svg>
+		</div>
+		<button onclick="draw()">click</button>
+		<header>
+			<script>
+				var scram2 = "";
+				var scramS = "";
+				var scram3 = "";
+				var scramP = "";
+
+				function init() {
+					document.getElementById("222_div").style.display = "none";
+					document.getElementById("333_div").style.display = "none";
+					document.getElementById("skb_div").style.display = "none";
+					document.getElementById("pyram_div").style.display = "none";
+				}
+
+				function draw() {
+					var cube = document.getElementById("cubes").value;
+					var scramble = document.getElementById("scram_here").value;
+
+					if (cube === "222") {
+						document.getElementById("222_div").style.display = "block";
+						document.getElementById("333_div").style.display = "none";
+						document.getElementById("skb_div").style.display = "none";
+						document.getElementById("pyram_div").style.display = "none";
+						drawCube2(scramble);
+
+					} else if (cube === "333") {
+						document.getElementById("222_div").style.display = "none";
+						document.getElementById("333_div").style.display = "block";
+						document.getElementById("skb_div").style.display = "none";
+						document.getElementById("pyram_div").style.display = "none";
+						drawCube3(scramble);
+
+					} else if (cube === "skb") {
+						document.getElementById("222_div").style.display = "none";
+						document.getElementById("333_div").style.display = "none";
+						document.getElementById("skb_div").style.display = "block";
+						document.getElementById("pyram_div").style.display = "none";
+						drawCubeS(scramble);
+						
+					} else if (cube === "pyram") {
+						document.getElementById("222_div").style.display = "none";
+						document.getElementById("333_div").style.display = "none";
+						document.getElementById("skb_div").style.display = "none";
+						document.getElementById("pyram_div").style.display = "block";
+						drawCubeP(scramble);	
+					}
+				}
+			</script>
+		</header>
+	</body>
+</html>
