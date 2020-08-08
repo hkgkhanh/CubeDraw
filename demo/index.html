@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<script src="libraries\bundle.min.js"></script>
+		<script src="scripts\scramSeq.js"></script>
+		<script src="scripts\draw222.js"></script>
+	<body onload="init(); draw();">
+
+		<div id="222_div" style="width:200px; height:200px;">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 178 136" style="stroke-linejoin:round;">
+				<g>
+					<rect x="44" y="2" width="20" height="20" stroke="black" id="222_U1"></rect>
+					<rect x="64" y="2" width="20" height="20" stroke="black" id="222_U2"></rect>
+					<rect x="44" y="22" width="20" height="20" stroke="black" id="222_U3"></rect>
+					<rect x="64" y="22" width="20" height="20" stroke="black" id="222_U4"></rect>
+					<rect x="86" y="44" width="20" height="20" stroke="black" id="222_R1"></rect>
+					<rect x="106" y="44" width="20" height="20" stroke="black" id="222_R2"></rect>
+					<rect x="86" y="64" width="20" height="20" stroke="black" id="222_R3"></rect>
+					<rect x="106" y="64" width="20" height="20" stroke="black" id="222_R4"></rect>
+					<rect x="44" y="44" width="20" height="20" stroke="black" id="222_F1"></rect>
+					<rect x="64" y="44" width="20" height="20" stroke="black" id="222_F2"></rect>
+					<rect x="44" y="64" width="20" height="20" stroke="black" id="222_F3"></rect>
+					<rect x="64" y="64" width="20" height="20" stroke="black" id="222_F4"></rect>
+					<rect x="44" y="86" width="20" height="20" stroke="black" id="222_D1"></rect>
+					<rect x="64" y="86" width="20" height="20" stroke="black" id="222_D2"></rect>
+					<rect x="44" y="106" width="20" height="20" stroke="black" id="222_D3"></rect>
+					<rect x="64" y="106" width="20" height="20" stroke="black" id="222_D4"></rect>
+					<rect x="2" y="44" width="20" height="20" stroke="black" id="222_L1"></rect>
+					<rect x="22" y="44" width="20" height="20" stroke="black" id="222_L2"></rect>
+					<rect x="2" y="64" width="20" height="20" stroke="black" id="222_L3"></rect>
+					<rect x="22" y="64" width="20" height="20" stroke="black" id="222_L4"></rect>
+					<rect x="128" y="44" width="20" height="20" stroke="black" id="222_B1"></rect>
+					<rect x="148" y="44" width="20" height="20" stroke="black" id="222_B2"></rect>
+					<rect x="128" y="64" width="20" height="20" stroke="black" id="222_B3"></rect>
+					<rect x="148" y="64" width="20" height="20" stroke="black" id="222_B4"></rect>
+				</g>
+			</svg>
+		</div>
+
+		<header>
+			<script>
+				var scram2 = "U R F' R F2 R U2 R F";
+
+				function init() {
+					document.getElementById("222_div").style.display = "block";
+				}
+
+				function draw() {
+
+					drawCube2(scram2);
+				}
+			</script>
+		</header>
+	</body>
+</html>
